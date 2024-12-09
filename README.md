@@ -20,8 +20,16 @@ This repository contains CUDA implementations of Gemm operation to compare CUDA 
 2. Compile and execute the `tensor.cu` file:
     ```sh
     $ nvcc -o tensor ./tensor.cu
+    $ nvcc -o streams ./streams.cu
 
+### Project structure
 
+```sh
+.
+├── README.md
+├── streams.cu  # To experiment overlapping execution of CUDA streams.
+└── tensor.cu  # To experiment Tensor & CUDA cores Gemm operation
+```
 
 ### Running the Code
 To run the compiled executable:
