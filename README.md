@@ -51,7 +51,7 @@ __Note__: To set Matrix size you may adjust the followings macros at top of the 
 #define K 4096
 ```
 
-## Sample Outputs
+### Sample Outputs
 
 `$ ./tensor --dynamic`:
 
@@ -79,3 +79,9 @@ Separate execution total time: 1805.71 ms (CUDA: 903.73 ms + Tensor: 901.98 ms)
 Fused kernel execution time: 1851.02 ms
 Speedup from fusion: 0.98x
 ```
+
+### How to profile
+
+To profile using Nsight Systems use the following command as example:
+
+`$ CUDA_VISIBLE_DEVICES=1 nsys  profile --force-overwrite true  -t nvtx,cuda -o ./profile/tensor_dynamic ./tensor --dynamic`
